@@ -1,0 +1,21 @@
+{
+  "name": "Signature Property & Consultant",
+  "short_name": "Signature Property",
+  "description": "Boutique property dealing, consultancy and marketing firm in Lahore, Pakistan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090b0c",
+  "theme_color": "#005F4B",
+  "icons": [
+    {
+      "src": "/assets/logo/Icon Logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/assets/logo/Icon Logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

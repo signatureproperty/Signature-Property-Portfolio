@@ -1,8 +1,8 @@
-# Signature Property & Consultant — Portfolio Website
+# Signature Property & Consultant — Complete Luxury Portfolio System
 
-A bespoke, high-end architectural and real estate consultancy portfolio website for **Signature Property & Consultant** (Lahore, Pakistan). 
+An enterprise-grade, high-end architectural and real estate consultancy portfolio website for **Signature Property & Consultant** (Lahore, Pakistan). 
 
-Built to present the company, its core services, verified track record, executive leadership, and advisory desk for Overseas Pakistanis, with an ultra-luxurious editorial aesthetic.
+Built to present the company, its core services, verified track record, executive leadership, and dedicated advisory desk for Overseas Pakistanis, with an ultra-luxurious editorial aesthetic inspired by modern architectural studios.
 
 ---
 
@@ -21,21 +21,22 @@ Built to present the company, its core services, verified track record, executiv
 
 ---
 
+## 👥 Executive Leadership Team
+
+- **Zubair Khizer** — Chief Executive Officer (CEO)
+- **Usman Sagheer** — Chief Technology Officer (CTO)
+- **Salman Fiaz** — Chief Strategy Officer (CSO)
+
+---
+
 ## 🎨 Official Brand Color System
 
 - **Signature Green**: `#00AF62` (Accent, interactive highlights, status dots)
 - **Deep Teal**: `#005F4B` (Secondary brand depth, italic serifs, container backgrounds)
 - **Obsidian / Near-Black**: `#0A0A0A` / `#090b0c` (Headings, primary typography, dark cards)
 - **Limestone / Ecru Background**: `#f5f5f2` (Warm architectural paper background)
+- **Sand / Accent Neutral**: `#e9e8e4` (Secondary cards, service containers)
 - **Pure White**: `#FFFFFF`
-
----
-
-## 👥 Executive Leadership Team
-
-- **Zubair Khizer** — Chief Executive Officer (CEO)
-- **Usman Sagheer** — Chief Technology Officer (CTO)
-- **Salman Fiaz** — Chief Strategy Officer / Sales Manager (CSO)
 
 ---
 
@@ -57,24 +58,74 @@ Built to present the company, its core services, verified track record, executiv
 
 ---
 
-## ✨ Interactive Features & Micro-Interactions
+## 🛡️ Enterprise Security & Hardening Architecture
 
-- **Magnetic Blend-Difference Cursor**: Inverted tracking dot that smoothly expands on interactive elements.
-- **Ambient Canvas Particles Engine**: Deep teal floating micro-particles in the hero section.
-- **Scroll-Driven Parallax Zoom**: Hero property image dynamically scales with viewport scroll.
-- **Frosted Glass Sticky Header**: Seamlessly transitions to `backdrop-blur-xl` upon scrolling past 30px.
-- **3D Card Perspective Tilt**: Real-time perspective rotation on mouse hover.
-- **Eased Metrics Counters**: Logarithmic counter animations for turnaround time and due-diligence standards.
-- **Interactive WhatsApp Dispatcher**: Pre-formats client inquiries and opens directly into WhatsApp chat.
-- **Single-Active Accordion FAQ**: Transparent answers on commissions, remote overseas buying, and marketing timelines.
-- **Mandatory Legal Disclaimer & Privacy Modals**: Fully aligned with professional regulatory practices.
+1. **Content Security Policy (CSP)**:
+   - Restricts resource loading to self and whitelisted CDNs (`cdn.tailwindcss.com`, `code.iconify.design`, Google Fonts).
+   - Frame ancestors restricted to prevent clickjacking.
+2. **Security Headers Pre-configured**:
+   - `X-Frame-Options: SAMEORIGIN`
+   - `X-Content-Type-Options: nosniff`
+   - `Referrer-Policy: strict-origin-when-cross-origin`
+   - `Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()`
+   - `Strict-Transport-Security (HSTS)`
+3. **Client-Side Input Sanitization**:
+   - Strict XSS sanitizer stripping `<script>`, HTML tags, pseudo-protocols, and control characters before form dispatching.
+   - Anti-spam submit button debouncing.
+4. **Server Deployment Configurations Included**:
+   - `.htaccess`: Apache / LiteSpeed (cPanel) configuration with security headers, Gzip compression, and browser caching.
+   - `_headers`: Cloudflare Pages and Netlify security headers.
+   - `nginx.conf`: Production Nginx reverse-proxy & static server configuration snippet.
+   - `.well-known/security.txt`: RFC 9116 security disclosure standard file.
+
+---
+
+## 📁 Project Architecture & File Structure
+
+```text
+SIGNATURE PROPERTY PORTFOLIO/
+├── .htaccess                     # Apache / LiteSpeed security & caching rules
+├── _headers                      # Cloudflare Pages / Netlify security headers
+├── nginx.conf                    # Nginx production configuration snippet
+├── robots.txt                    # Search engine crawling rules
+├── sitemap.xml                   # XML sitemap with all subpages
+├── site.webmanifest              # PWA manifest for mobile installation
+├── package.json                  # Dev server and script commands
+├── README.md                     # Comprehensive documentation
+├── .gitignore                    # Clean repository ignore patterns
+├── .well-known/
+│   └── security.txt              # RFC 9116 security contact policy
+├── assets/
+│   ├── logo/
+│   │   ├── Signature Property Website Logo for Light Mode.png
+│   │   ├── Signature Property Website Logo for Dark Mode.png
+│   │   ├── Icon Logo.jpeg
+│   │   └── Black Logo with White Background.png
+│   └── images/
+│       ├── hero-mansion.jpg
+│       ├── luxury-interior.jpg
+│       ├── luxury-tower.jpg
+│       └── villa-entrance.jpg
+├── css/
+│   └── style.css                 # Modular luxury tokens, cursor, 3D tilt, and typography
+├── js/
+│   ├── main.js                   # Application bootstrapper
+│   ├── cursor.js                 # Magnetic blend-difference cursor engine
+│   ├── particles.js              # Ambient dust canvas particle simulator
+│   ├── animations.js             # 3D tilt, scroll reveals, parallax hero, counters
+│   └── interactions.js           # Menu, FAQ accordion, modals, secure form handler
+├── index.html                    # Main luxury portfolio webpage
+├── 404.html                      # Bespoke 404 error page matching dark aesthetic
+├── privacy.html                  # Standalone full Privacy Policy page
+└── terms.html                    # Standalone full Terms of Reference & Advisory Charter
+```
 
 ---
 
 ## 🚀 Running the Project
 
 ### Option 1: Direct File Launch
-Double-click `index.html` in your file explorer to open it in any web browser.
+Double-click `index.html` in your file explorer to open it in any modern browser.
 
 ### Option 2: Local Dev Server
 ```bash

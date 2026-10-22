@@ -1,0 +1,268 @@
+/**
+ * SIGNATURE PROPERTY & CONSULTANT — Core Luxury Stylesheet
+ * Architectural Design System & Interactive Motion Tokens
+ * Version: 2.0.0
+ * Licensed for: Signature Property & Consultant (Lahore, PK)
+ */
+
+/* ==========================================================================
+   1. DESIGN TOKENS & ROOT VARIABLES
+   ========================================================================== */
+:root {
+  /* Brand Palette */
+  --brand-green: #00AF62;
+  --brand-green-hover: #009653;
+  --brand-teal: #005F4B;
+  --brand-teal-dark: #004537;
+  --brand-dark: #090b0c;
+  --brand-obsidian: #0A0A0A;
+  --brand-ecru: #f5f5f2;
+  --brand-sand: #e9e8e4;
+  --brand-stone: #dedfdb;
+  --brand-white: #ffffff;
+
+  /* Typography */
+  --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, Cambria, 'Times New Roman', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 35px -5px rgba(0, 175, 98, 0.35);
+
+  /* Transitions & Timing */
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+
+  /* Layout */
+  --nav-height: 4.875rem;
+  --container-width: 91.5vw;
+}
+
+/* ==========================================================================
+   2. BASE RESETS & SCROLL BEHAVIOR
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 1rem);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--brand-ecru);
+  color: var(--brand-dark);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--brand-teal);
+  color: var(--brand-white);
+}
+
+/* ==========================================================================
+   3. LUXURY INVERTED MIX-BLEND CURSOR
+   ========================================================================== */
+#cursor {
+  position: fixed;
+  left: -100px;
+  top: -100px;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--brand-white);
+  border-radius: 9999px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width var(--duration-fast) var(--ease-luxury),
+              height var(--duration-fast) var(--ease-luxury),
+              transform 60ms linear;
+  will-change: transform, width, height;
+}
+
+#cursor.cursor-hover {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+/* Hide custom cursor on touch devices or fine pointer absent */
+@media (pointer: coarse), (hover: none) {
+  #cursor {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   4. NAVIGATION & FROSTED GLASS
+   ========================================================================== */
+#nav {
+  height: var(--nav-height);
+  transition: background-color var(--duration-normal) var(--ease-luxury),
+              backdrop-filter var(--duration-normal) var(--ease-luxury),
+              border-color var(--duration-normal) var(--ease-luxury),
+              box-shadow var(--duration-normal) var(--ease-luxury);
+}
+
+#nav.scrolled {
+  background-color: rgba(245, 245, 242, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* ==========================================================================
+   5. AMBIENT PARTICLES CANVAS
+   ========================================================================== */
+#particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#particles canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   6. 3D CARD PERSPECTIVE TILT
+   ========================================================================== */
+.tilt {
+  transform-style: preserve-3d;
+  perspective: 56rem;
+  transition: transform var(--duration-normal) var(--ease-luxury),
+              background-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   7. STAGGERED SCROLL REVEALS
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity var(--duration-slow) var(--ease-luxury),
+              transform var(--duration-slow) var(--ease-luxury);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ==========================================================================
+   8. SINGLE-ACTIVE FAQ ACCORDION
+   ========================================================================== */
+.faq-item {
+  transition: border-color var(--duration-fast) ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms var(--ease-luxury);
+  will-change: max-height;
+}
+
+.faq-icon {
+  transform-origin: center;
+  transition: transform 350ms var(--ease-luxury), color var(--duration-fast) ease;
+}
+
+/* ==========================================================================
+   9. MODALS & OVERLAYS
+   ========================================================================== */
+.modal-overlay {
+  animation: modalFadeIn 250ms var(--ease-luxury) forwards;
+}
+
+.modal-content {
+  animation: modalScaleUp 300ms var(--ease-luxury) forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Body lock when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   10. ACCESSIBILITY & REDUCED MOTION PREFERENCES
+   ========================================================================== */
+:focus-visible {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tilt {
+    transform: none !important;
+  }
+
+  #cursor {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   11. PRINT STYLING
+   ========================================================================== */
+@media print {
+  #nav,
+  #cursor,
+  #particles,
+  .modal-overlay,
+  #mobileMenu {
+    display: none !important;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+}

@@ -1,0 +1,10 @@
+# Signature Property & Consultant Security Policy
+# RFC 9116 Compliant Security Disclosure
+
+Contact: mailto:thesignatureproperty@gmail.com
+Contact: https://wa.me/923298838068
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, ur
+Canonical: https://portfolio.signatureproperty.pk/.well-known/security.txt
+Policy: https://portfolio.signatureproperty.pk/privacy.html
+Acknowledgments: https://portfolio.signatureproperty.pk/

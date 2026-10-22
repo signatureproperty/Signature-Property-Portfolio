@@ -31,6 +31,18 @@
     <meta name="twitter:description" content="Property Dealing, Strategic Consultancy and Video Marketing in Lahore, Pakistan." />
     <meta name="twitter:image" content="assets/images/hero-mansion.jpg" />
 
+        <!-- Security Headers Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()" />
+    <meta name="theme-color" content="#005F4B" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Core Modular Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/jpeg" href="assets/logo/Icon Logo.jpeg" />
     <link rel="apple-touch-icon" href="assets/logo/Icon Logo.jpeg" />
@@ -979,7 +991,7 @@
                   Salman Fiaz
                 </h3>
                 <p class="text-xs font-medium uppercase tracking-[0.14rem] text-[#005F4B] mt-1 mb-4">
-                  CSO / Sales Manager
+                  Chief Strategy Officer (CSO)
                 </p>
                 <p class="text-sm leading-relaxed text-black/65">
                   Oversees client sales operations, buyer negotiations, property opportunity matching, and field transactions across residential and commercial developments.
@@ -1325,7 +1337,7 @@
           <!-- Quick Interactive Inquiry Form Trigger -->
           <div class="mt-8">
             <button
-              onclick="document.getElementById('inquiryModal').classList.remove('hidden')"
+              onclick="openModal('inquiryModal')"
               class="interactive group flex items-center gap-3 rounded-full bg-[#00AF62] py-3.5 px-8 text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#009653] hover:scale-105 shadow-xl"
             >
               <span>Submit Detailed Inquiry Form</span>
@@ -1420,8 +1432,9 @@
       >
         <p>© 2024–2026 Signature Property & Consultant. All rights reserved.</p>
         <div class="flex gap-6">
-          <button onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="interactive hover:text-white">Privacy Notice</button>
-          <button onclick="document.getElementById('disclaimerModal').classList.remove('hidden')" class="interactive hover:text-white">Terms of Reference</button>
+          <a href="privacy.html" class="interactive hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="interactive hover:text-white transition-colors">Terms of Reference</a>
+          <button onclick="openModal('disclaimerModal')" class="interactive hover:text-white transition-colors">Quick Disclaimer</button>
         </div>
       </div>
 
@@ -1546,225 +1559,36 @@
       </div>
     </div>
 
-    <!-- JavaScript Interactive Engine -->
+        <!-- Modular JavaScript Engine -->
+    <script type="module" src="js/main.js"></script>
     <script>
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // 1. Mobile Menu Toggle
+      // Global fallbacks for inline attributes
+      function openModal(id) {
+        const m = document.getElementById(id);
+        if (m) {
+          m.classList.remove('hidden');
+          document.body.classList.add('modal-open');
+        }
+      }
+      function closeModal(id) {
+        const m = document.getElementById(id);
+        if (m) {
+          m.classList.add('hidden');
+          document.body.classList.remove('modal-open');
+        }
+      }
       function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
         const icon = document.getElementById('menuIcon');
-        if (menu.classList.contains('hidden')) {
-          menu.classList.remove('hidden');
-          icon.setAttribute('icon', 'solar:close-circle-linear');
-        } else {
-          menu.classList.add('hidden');
-          icon.setAttribute('icon', 'solar:hamburger-menu-linear');
-        }
-      }
-
-      // 2. Navigation Scroll Effect
-      const nav = document.getElementById('nav');
-      const heroImage = document.getElementById('heroImage');
-
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-
-        if (y > 30) {
-          nav.classList.add('bg-[#f5f5f2]/85', 'backdrop-blur-xl', 'border-black/10', 'shadow-sm');
-          nav.classList.remove('border-transparent');
-        } else {
-          nav.classList.remove('bg-[#f5f5f2]/85', 'backdrop-blur-xl', 'border-black/10', 'shadow-sm');
-          nav.classList.add('border-transparent');
-        }
-
-        if (!reduceMotion && heroImage && y < window.innerHeight * 1.3) {
-          heroImage.style.transform = `translateX(-50%) translateY(${y * 0.12}px) scale(${1 + y * 0.00008})`;
-        }
-      }, { passive: true });
-
-      // 3. Smooth Anchor Navigation
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', event => {
-          const href = link.getAttribute('href');
-          if (href === '#') return;
-          const target = document.querySelector(href);
-          if (target) {
-            event.preventDefault();
-            target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+        if (menu) {
+          if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            if (icon) icon.setAttribute('icon', 'solar:close-circle-linear');
+          } else {
+            menu.classList.add('hidden');
+            if (icon) icon.setAttribute('icon', 'solar:hamburger-menu-linear');
           }
-        });
-      });
-
-      // 4. Mix-Blend Custom Cursor
-      const cursor = document.getElementById('cursor');
-      if (cursor) {
-        window.addEventListener('mousemove', event => {
-          cursor.style.left = `${event.clientX}px`;
-          cursor.style.top = `${event.clientY}px`;
-        });
-
-        document.querySelectorAll('.interactive, a, button, input, select, textarea').forEach(element => {
-          element.addEventListener('mouseenter', () => {
-            cursor.style.width = '3.25rem';
-            cursor.style.height = '3.25rem';
-          });
-          element.addEventListener('mouseleave', () => {
-            cursor.style.width = '0.75rem';
-            cursor.style.height = '0.75rem';
-          });
-        });
-      }
-
-      // 5. Staggered Scroll Reveal Animations
-      const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-
-      document.querySelectorAll('.reveal').forEach((element, index) => {
-        element.style.opacity = reduceMotion ? '1' : '0';
-        element.style.transform = reduceMotion ? 'none' : 'translateY(2.5rem)';
-        element.style.transition = `opacity 900ms cubic-bezier(.22,1,.36,1) ${(index % 3) * 80}ms, transform 900ms cubic-bezier(.22,1,.36,1) ${(index % 3) * 80}ms`;
-        revealObserver.observe(element);
-      });
-
-      // 6. Numerical Metrics Counting Easing
-      let counted = false;
-      const metricsContainer = document.getElementById('metrics');
-      if (metricsContainer) {
-        const metricsObserver = new IntersectionObserver(entries => {
-          if (entries[0].isIntersecting && !counted) {
-            counted = true;
-            document.querySelectorAll('.metric').forEach(metric => {
-              const target = Number(metric.dataset.target);
-              const suffix = metric.dataset.suffix || '';
-              const start = performance.now();
-              const duration = reduceMotion ? 1 : 1400;
-
-              function update(now) {
-                const progress = Math.min((now - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 4);
-                metric.textContent = `${Math.round(target * eased)}${suffix}`;
-                if (progress < 1) requestAnimationFrame(update);
-              }
-              requestAnimationFrame(update);
-            });
-          }
-        }, { threshold: 0.15 });
-
-        metricsObserver.observe(metricsContainer);
-      }
-
-      // 7. 3D Perspective Card Tilt
-      document.querySelectorAll('.tilt').forEach(card => {
-        card.style.transition = 'transform 400ms cubic-bezier(.22,1,.36,1)';
-
-        card.addEventListener('mousemove', event => {
-          if (reduceMotion) return;
-          const rect = card.getBoundingClientRect();
-          const x = (event.clientX - rect.left) / rect.width - 0.5;
-          const y = (event.clientY - rect.top) / rect.height - 0.5;
-          card.style.transform = `perspective(56rem) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) scale(0.995)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(56rem) rotateX(0) rotateY(0) scale(1)';
-        });
-      });
-
-      // 8. Interactive Single-Active FAQ Accordion
-      document.querySelectorAll('.faq-item button').forEach(button => {
-        button.addEventListener('click', () => {
-          const currentItem = button.closest('.faq-item');
-          const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-          document.querySelectorAll('.faq-item').forEach(item => {
-            item.querySelector('button').setAttribute('aria-expanded', 'false');
-            item.querySelector('.faq-answer').style.maxHeight = '0';
-            const icon = item.querySelector('.faq-icon');
-            if (icon) icon.style.transform = 'rotate(0deg)';
-          });
-
-          if (!isOpen) {
-            button.setAttribute('aria-expanded', 'true');
-            currentItem.querySelector('.faq-answer').style.maxHeight = '9rem';
-            const icon = currentItem.querySelector('.faq-icon');
-            if (icon) icon.style.transform = 'rotate(45deg)';
-          }
-        });
-      });
-
-      // 9. Canvas Ambient Particles Engine
-      const particleHost = document.getElementById('particles');
-      if (particleHost) {
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-        particleHost.appendChild(canvas);
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-
-        const particles = Array.from({ length: 85 }, () => ({
-          x: Math.random(),
-          y: Math.random(),
-          size: Math.random() * 1.5 + 0.3,
-          speed: Math.random() * 0.00008 + 0.00002,
-          opacity: Math.random() * 0.45 + 0.15
-        }));
-
-        function resizeParticles() {
-          const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
-          canvas.width = particleHost.clientWidth * ratio;
-          canvas.height = particleHost.clientHeight * ratio;
-          context.setTransform(ratio, 0, 0, ratio, 0, 0);
         }
-
-        function drawParticles() {
-          const width = particleHost.clientWidth;
-          const height = particleHost.clientHeight;
-          context.clearRect(0, 0, width, height);
-
-          particles.forEach(particle => {
-            if (!reduceMotion) particle.y = (particle.y + particle.speed) % 1;
-            context.beginPath();
-            context.arc(particle.x * width, particle.y * height, particle.size, 0, Math.PI * 2);
-            context.fillStyle = `rgba(0, 95, 75, ${particle.opacity})`;
-            context.fill();
-          });
-
-          requestAnimationFrame(drawParticles);
-        }
-
-        resizeParticles();
-        drawParticles();
-        window.addEventListener('resize', resizeParticles);
-      }
-
-      // 10. Lead Form WhatsApp Dispatcher
-      function handleInquirySubmit(event) {
-        event.preventDefault();
-        const name = document.getElementById('leadName').value.trim();
-        const phone = document.getElementById('leadPhone').value.trim();
-        const location = document.getElementById('leadLocation').value;
-        const service = document.getElementById('leadService').value;
-        const message = document.getElementById('leadMessage').value.trim();
-
-        const formattedText = encodeURIComponent(
-          `*New Property Inquiry - Signature Property*%0A%0A` +
-          `*Name:* ${name}%0A` +
-          `*Phone:* ${phone}%0A` +
-          `*Location:* ${location}%0A` +
-          `*Service Required:* ${service}%0A` +
-          `*Details:* ${message || 'N/A'}`
-        );
-
-        window.open(`https://wa.me/923298838068?text=${formattedText}`, '_blank');
-        document.getElementById('inquiryModal').classList.add('hidden');
       }
     </script>
   </body>
