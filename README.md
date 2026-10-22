@@ -25,7 +25,7 @@ Built to present the company, its core services, verified track record, executiv
 
 - **Zubair Khizer** — Chief Executive Officer (CEO)
 - **Usman Sagheer** — Chief Technology Officer (CTO)
-- **Salman Fiaz** — Chief Strategy Officer (CSO)
+- **Salman Fiaz** — Sales Officer
 
 ---
 
