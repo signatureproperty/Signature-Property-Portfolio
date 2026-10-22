@@ -1,0 +1,20 @@
+{
+  "name": "signature-property-portfolio",
+  "version": "1.0.0",
+  "description": "Architectural place-finding and luxury property portfolio website, reverse-engineered from MaisonFav.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "real-estate",
+    "architecture",
+    "portfolio",
+    "maisonfav",
+    "luxury",
+    "tailwind"
+  ],
+  "author": "",
+  "license": "MIT"
+}
