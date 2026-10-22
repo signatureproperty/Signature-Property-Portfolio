@@ -4,8 +4,8 @@
   "description": "Architectural place-finding and luxury property portfolio website, reverse-engineered from MaisonFav.",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve -l 3000 .",
-    "dev": "npx serve -l 3000 ."
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "keywords": [
     "real-estate",
