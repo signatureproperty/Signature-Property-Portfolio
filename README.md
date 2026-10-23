@@ -18,6 +18,10 @@ Built to present the company, its core services, verified track record, executiv
 - **Primary Contact Channels**:
   - **Phone / WhatsApp**: [+92 329 8838068](https://wa.me/923298838068)
   - **Email**: [thesignatureproperty@gmail.com](mailto:thesignatureproperty@gmail.com)
+- **Official Social Media**:
+  - **TikTok**: [@signatureproperty0](https://www.tiktok.com/@signatureproperty0?_r=1&_t=ZN-9AnCVRSVdt0)
+  - **Instagram**: [@signatureproperty0](https://www.instagram.com/signatureproperty0?psln=MXk1ZDU4N255OG90)
+  - **Facebook**: [Signature Property](https://www.facebook.com/share/1Dybqzni7P/)
 
 ---
 
