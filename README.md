@@ -48,7 +48,7 @@ Built to present the company, its core services, verified track record, executiv
 
 1. **Property Buying & Selling Support**: Private transaction coordination, curated shortlisting, and pricing reality checks.
 2. **Residential & Commercial Property Consultancy**: Custom property search based on client budget, timeline, and spatial utility.
-3. **Property Video Shoots & Visual Storytelling**: Cinematic walkthroughs, architectural framing, and immersive reels.
+3. **Property Video Shoots & Visual Storytelling**: High-impact HD walkthroughs, architectural framing, and immersive reels.
 4. **Meta Ads & Strategic Property Promotion**: Data-driven digital campaigns connecting listings with high-intent buyers.
 5. **Developer & Project Marketing**: Turnkey marketing frameworks for apartment developments and commercial complexes.
 6. **Dedicated Advisory for Overseas Pakistanis**: Virtual video inspections, document due-diligence checklists, and timezone-aligned WhatsApp handling.
@@ -58,7 +58,7 @@ Built to present the company, its core services, verified track record, executiv
 ## 📈 Proven Case Studies Included
 
 1. **Ichhra Shama Residential Project (Lahore)**: 12 apartment units marketed and completely sold out within ~1 to 2 months.
-2. **Cinematic Video Promotion Benchmark**: Early high-impact property shoot resulting in a completed transaction within 7 days of release.
+2. **Video Promotion Benchmark**: Early high-impact property shoot resulting in a completed transaction within 7 days of release.
 
 ---
 
