@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 — Page Not Found | Signature Property & Consultant</title>
     <meta name="robots" content="noindex, follow" />
-    <link rel="icon" type="image/jpeg" href="assets/logo/Icon Logo.jpeg" />
+    <link rel="icon" type="image/png" href="assets/logo/Signature Property Website Logo for Light Mode.png" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
@@ -13,45 +13,107 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#090b0c] text-white min-h-screen flex flex-col justify-between selection:bg-[#00AF62] selection:text-white" style="font-family:'DM Sans',sans-serif;">
-    <!-- Minimal Header -->
-    <header class="p-8 flex items-center justify-between border-b border-white/10">
-      <a href="index.html" class="inline-block">
-        <img src="assets/logo/Signature Property Website Logo for Dark Mode.png" alt="Signature Property" class="h-10 w-auto" />
-      </a>
-      <a href="https://wa.me/923298838068" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:border-[#00AF62] transition-colors">
-        <iconify-icon icon="solar:chat-round-line-linear" class="text-[#00AF62]" width="16" height="16"></iconify-icon>
-        <span>WhatsApp</span>
-      </a>
+  <body class="bg-[#f5f5f2] text-[#090b0c] min-h-screen flex flex-col justify-between selection:bg-[#005F4B] selection:text-white" style="font-family:'DM Sans',sans-serif;">
+    <!-- Custom Inverted Cursor -->
+    <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[120] hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference transition-[width,height] duration-300 lg:block"></div>
+
+    <!-- Minimal Matching Header -->
+    <header class="border-b border-black/5 bg-[#f5f5f2]/80 backdrop-blur-md sticky top-0 z-50">
+      <div class="mx-auto w-[91.5vw] h-20 flex items-center justify-between">
+        <a href="index.html" class="inline-block transition-opacity hover:opacity-85">
+          <img src="assets/logo/Signature Property Website Logo for Light Mode.png" alt="Signature Property & Consultant" class="h-10 w-auto" />
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="https://wa.me/923298838068?text=Hello%20Signature%20Property,%20I%20need%20assistance." target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#090b0c] hover:border-[#00AF62] transition-colors">
+            <iconify-icon icon="solar:chat-round-line-linear" class="text-[#00AF62]" width="16" height="16"></iconify-icon>
+            <span>+92 329 8838068</span>
+          </a>
+          <a href="index.html" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-black/70 hover:text-[#005F4B] transition-colors">
+            <iconify-icon icon="solar:arrow-left-linear" width="16" height="16"></iconify-icon>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
     </header>
 
-    <!-- Main 404 Hero -->
-    <main class="flex-1 flex flex-col items-center justify-center text-center px-6 py-20 relative overflow-hidden">
-      <div class="pointer-events-none absolute h-96 w-96 rounded-full bg-[#005F4B]/20 blur-3xl"></div>
-      
-      <p class="text-xs font-mono uppercase tracking-[0.25rem] text-[#00AF62] mb-4">Error 404 · Uncharted Address</p>
-      <h1 class="text-6xl sm:text-8xl font-medium tracking-[-0.06em] mb-4">
-        Location
-        <span class="italic text-[#00AF62]" style="font-family:'Instrument Serif',Georgia,serif;">not found.</span>
-      </h1>
-      <p class="max-w-md text-sm text-white/60 leading-relaxed mb-10">
-        The architectural page or property record you are seeking has either been relocated or does not exist within our public portfolio index.
-      </p>
+    <!-- Main 404 Editorial Centerpiece -->
+    <main class="flex-1 flex flex-col items-center justify-center text-center px-6 py-16 sm:py-24 relative overflow-hidden">
+      <!-- Ambient Glow Softeners -->
+      <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-[#00AF62]/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-24 right-10 h-80 w-80 rounded-full bg-[#005F4B]/10 blur-3xl"></div>
 
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="index.html" class="flex items-center gap-2 rounded-full bg-[#00AF62] px-7 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-[#009653] hover:scale-105 shadow-lg">
-          <iconify-icon icon="solar:home-2-linear" width="16" height="16"></iconify-icon>
-          <span>Return to Homepage</span>
-        </a>
-        <a href="index.html#contact" class="flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-white">
-          <span>Consult Our Advisory</span>
-        </a>
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <!-- Eyebrow -->
+        <div class="mb-5 flex items-center justify-center gap-3">
+          <span class="h-px w-5 bg-[#00AF62]"></span>
+          <p class="text-xs font-semibold uppercase tracking-[0.16rem] text-[#00AF62]">
+            Error 404 · Uncharted Address
+          </p>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-6xl sm:text-8xl font-medium tracking-[-0.06em] leading-[0.9] text-[#090b0c] mb-6">
+          Page
+          <br />
+          <span class="font-normal italic text-[#005F4B]" style="font-family:'Instrument Serif',Georgia,serif;">
+            not found.
+          </span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="max-w-md mx-auto text-sm leading-relaxed text-black/60 mb-10">
+          The property link or page you are looking for has been moved, removed, or does not exist in our portfolio index.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="index.html"
+            class="interactive group flex items-center gap-4 rounded-full bg-[#090b0c] py-2 pl-6 pr-2 text-xs font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#005F4B] hover:-translate-y-0.5 shadow-md"
+          >
+            Return to Home
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black transition-transform duration-300 group-hover:bg-[#00AF62] group-hover:text-white">
+              <iconify-icon icon="solar:arrow-right-linear" width="18" height="18"></iconify-icon>
+            </span>
+          </a>
+
+          <a
+            href="https://wa.me/923298838068?text=Hello%20Signature%20Property,%20I%20am%20looking%20for%20a%20property%20listing."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="interactive flex items-center gap-2 rounded-full border border-black/15 bg-white/80 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-[#090b0c] transition-all duration-300 hover:border-[#00AF62] hover:bg-white hover:-translate-y-0.5 shadow-sm"
+          >
+            <iconify-icon icon="solar:chat-round-line-linear" class="text-[#00AF62]" width="18" height="18"></iconify-icon>
+            <span>WhatsApp Advisory</span>
+          </a>
+        </div>
+
+        <!-- Clean Quick Links Strip -->
+        <div class="mt-14 pt-8 border-t border-black/10 flex flex-wrap items-center justify-center gap-6 text-xs text-black/60">
+          <span class="text-black/40 uppercase tracking-wider">Quick Navigation:</span>
+          <a href="index.html#services" class="hover:text-[#005F4B] transition-colors">Our Services</a>
+          <span>·</span>
+          <a href="index.html#case-studies" class="hover:text-[#005F4B] transition-colors">Case Studies</a>
+          <span>·</span>
+          <a href="index.html#overseas" class="hover:text-[#005F4B] transition-colors">Overseas Desk</a>
+          <span>·</span>
+          <a href="index.html#contact" class="hover:text-[#005F4B] transition-colors">Contact</a>
+        </div>
       </div>
     </main>
 
-    <!-- Minimal Footer -->
-    <footer class="p-8 text-center text-xs text-white/40 border-t border-white/10">
-      <p>© 2024–2026 Signature Property & Consultant. Lahore, Punjab, Pakistan.</p>
+    <!-- Minimal Matching Footer -->
+    <footer class="border-t border-black/10 bg-[#f5f5f2] py-8">
+      <div class="mx-auto w-[91.5vw] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-black/50">
+        <p>© 2024–2026 Signature Property & Consultant. Lahore, Pakistan.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy.html" class="hover:text-black transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-black transition-colors">Terms of Service</a>
+        </div>
+      </div>
     </footer>
+
+    <!-- Interactive Cursor Script -->
+    <script src="js/cursor.js"></script>
   </body>
 </html>
