@@ -88,4 +88,18 @@ export function initAnimations() {
 
     metricsObserver.observe(metricsContainer);
   }
+
+  // 5. Back to Top Button Visibility
+  const btt = document.getElementById('backToTop');
+  if (btt) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        btt.classList.remove('opacity-0', 'pointer-events-none');
+        btt.classList.add('opacity-100');
+      } else {
+        btt.classList.add('opacity-0', 'pointer-events-none');
+        btt.classList.remove('opacity-100');
+      }
+    }, { passive: true });
+  }
 }
