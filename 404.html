@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 — Page Not Found | Signature Property & Consultant</title>
+    <meta name="description" content="The page you are looking for does not exist or has been moved. Explore luxury properties with Signature Property & Consultant Lahore." />
     <meta name="robots" content="noindex, follow" />
     <link rel="icon" type="image/png" href="assets/logo/Signature Property Website Logo for Light Mode.png" />
     <link rel="stylesheet" href="css/style.css" />
@@ -113,7 +114,14 @@
       </div>
     </footer>
 
-    <!-- Interactive Cursor Script -->
-    <script src="js/cursor.js"></script>
+    <!-- Interactive Cursor Module -->
+    <script type="module">
+      import { initCursor } from './js/cursor.js';
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          initCursor();
+        } catch(e) {}
+      });
+    </script>
   </body>
 </html>

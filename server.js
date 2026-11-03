@@ -23,11 +23,24 @@ const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
   if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
 
-  const filePath = path.join(root, decodeURIComponent(reqPath));
+  // Prevent directory traversal attacks
+  const safePath = path.normalize(decodeURIComponent(reqPath)).replace(/^(\.\.[\/\\])+/, '');
+  const filePath = path.join(root, safePath);
 
-  if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('404 Not Found');
+  // Security check: ensure filePath is within root
+  if (!filePath.startsWith(root) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+    const errorPage = path.join(root, '404.html');
+    if (fs.existsSync(errorPage)) {
+      res.writeHead(404, {
+        'Content-Type': 'text/html; charset=UTF-8',
+        'X-Content-Type-Options': 'nosniff',
+        'X-Frame-Options': 'SAMEORIGIN'
+      });
+      fs.createReadStream(errorPage).pipe(res);
+    } else {
+      res.writeHead(404, { 'Content-Type': 'text/plain; charset=UTF-8' });
+      res.end('404 Not Found');
+    }
     return;
   }
 

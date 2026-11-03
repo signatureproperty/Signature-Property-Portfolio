@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -78,6 +78,48 @@
         "closes": "19:00"
       },
       "priceRange": "$$$"
+    }
+    </script>
+
+    <!-- Structured Data (JSON-LD) for FAQ Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which areas in Lahore do you primarily specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We primarily focus on Lahore's premier residential and commercial sectors including DHA Lahore (all phases), Gulberg, Model Town, Bahria Town, and emerging high-growth sectors along Ring Road."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your commission structure for property dealing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain standard market commissions (typically 1% from both buyer and seller on completed transactions) with zero hidden fees. Advisory and marketing engagements are outlined transparently upfront."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you help Overseas Pakistanis buy property safely without being present?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We manage the complete end-to-end process: detailed 4K unedited video walkthroughs, independent physical inspection, revenue authority registry checks (LDA/DHA), and power of attorney coordination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you promise or guarantee high investment returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Signature Property strictly adheres to honest advisory. Real estate markets carry natural market dynamics. We provide verified data and historical insights, but we never make speculative profit promises."
+          }
+        }
+      ]
     }
     </script>
 
@@ -214,7 +256,7 @@
             href="#contact"
             class="interactive group flex items-center gap-3 rounded-full bg-[#090b0c] py-1.5 pl-5 pr-1.5 text-xs font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#005F4B] hover:-translate-y-0.5 shadow-sm"
           >
-            <span class="hidden xs:inline">Start a</span> Search
+            <span class="hidden sm:inline">Start a</span> Search
             <span
               class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-black transition-transform duration-300 group-hover:bg-[#00AF62] group-hover:text-white"
             >
@@ -398,7 +440,7 @@
           class="reveal mt-20 grid min-h-[22rem] overflow-hidden rounded-2xl md:grid-cols-[1.1fr_2fr_1.1fr] shadow-sm"
         >
           <img
-            src="assets/images/luxury-interior.jpg"
+            src="assets/images/luxury-interior.jpg" loading="lazy" decoding="async"
             alt="Interior architectural clarity"
             class="hidden h-full w-full object-cover md:block"
           />
@@ -483,7 +525,7 @@
             </div>
           </div>
           <img
-            src="assets/images/villa-entrance.jpg"
+            src="assets/images/villa-entrance.jpg" loading="lazy" decoding="async"
             alt="Lahore architectural residential development"
             class="h-72 w-full object-cover md:h-full"
           />
@@ -561,7 +603,7 @@
               01
             </span>
             <img
-              src="assets/images/maisonfav-services-card.png"
+              src="assets/images/maisonfav-services-card.png" loading="lazy" decoding="async"
               alt="Luxury residence architecture"
               class="absolute left-[12%] top-[14%] h-[52%] w-[72%] rotate-[-4deg] rounded-lg object-cover shadow-2xl transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-[-6deg]"
             />
@@ -689,7 +731,7 @@
             class="tilt interactive relative h-[30rem] overflow-hidden rounded-2xl group shadow-sm"
           >
             <img
-              src="assets/images/luxury-tower.jpg"
+              src="assets/images/luxury-tower.jpg" loading="lazy" decoding="async"
               alt="Ichhra Shama Residential Apartment Project Lahore"
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -728,7 +770,7 @@
             class="tilt interactive relative h-[30rem] overflow-hidden rounded-2xl group shadow-sm"
           >
             <img
-              src="assets/images/villa-entrance.jpg"
+              src="assets/images/villa-entrance.jpg" loading="lazy" decoding="async"
               alt="High-Impact Property Video Campaign"
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -843,7 +885,7 @@
       </section>
 
       <!-- The 4-Stage Search Journey -->
-      <section class="mx-auto w-[89vw] py-28 lg:w-[91.5vw] lg:py-36">
+      <section id="process" class="mx-auto w-[89vw] py-28 lg:w-[91.5vw] lg:py-36">
         <div class="reveal mb-20 max-w-2xl">
           <div class="mb-4 flex items-center gap-3">
             <span class="h-px w-5 bg-[#00AF62]"></span>
@@ -1518,13 +1560,34 @@
       >
         SIGNATURE
       </p>
+    <!-- Floating Direct WhatsApp Button -->
+    <a
+      href="https://wa.me/923298838068?text=Hello%20Signature%20Property,%20I%20would%20like%20to%20inquire%20about%20a%20property."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="interactive fixed bottom-6 right-6 z-[100] flex items-center gap-2.5 rounded-full bg-[#00AF62] py-3 px-4.5 text-white shadow-2xl transition-all duration-300 hover:bg-[#009653] hover:scale-105 hover:shadow-[0_10px_25px_-5px_rgba(0,175,98,0.5)] group"
+      aria-label="Direct WhatsApp Consultation"
+    >
+      <iconify-icon icon="ic:baseline-whatsapp" width="22" height="22" class="transition-transform group-hover:scale-110"></iconify-icon>
+      <span class="text-xs font-semibold uppercase tracking-wider hidden sm:inline">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="interactive fixed bottom-6 left-6 z-[90] flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-black shadow-lg border border-black/10 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 hover:bg-[#005F4B] hover:text-white hover:border-[#005F4B]"
+      aria-label="Back to Top"
+    >
+      <iconify-icon icon="solar:arrow-up-linear" width="18" height="18"></iconify-icon>
+    </button>
     </footer>
 
     <!-- Interactive Inquiry Modal -->
     <div id="inquiryModal" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div class="relative w-full max-w-lg rounded-2xl bg-[#090b0c] border border-white/20 p-8 text-white shadow-2xl">
         <button
-          onclick="document.getElementById('inquiryModal').classList.add('hidden')"
+          onclick="closeModal('inquiryModal')"
           class="interactive absolute right-6 top-6 text-white/60 hover:text-white"
         >
           <iconify-icon icon="solar:close-circle-linear" width="28" height="28"></iconify-icon>
@@ -1589,7 +1652,7 @@
     <div id="privacyModal" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div class="relative w-full max-w-lg rounded-2xl bg-[#090b0c] border border-white/20 p-8 text-white shadow-2xl max-h-[85vh] overflow-y-auto">
         <button
-          onclick="document.getElementById('privacyModal').classList.add('hidden')"
+          onclick="closeModal('privacyModal')"
           class="interactive absolute right-6 top-6 text-white/60 hover:text-white"
         >
           <iconify-icon icon="solar:close-circle-linear" width="28" height="28"></iconify-icon>
@@ -1613,7 +1676,7 @@
     <div id="disclaimerModal" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div class="relative w-full max-w-lg rounded-2xl bg-[#090b0c] border border-white/20 p-8 text-white shadow-2xl max-h-[85vh] overflow-y-auto">
         <button
-          onclick="document.getElementById('disclaimerModal').classList.add('hidden')"
+          onclick="closeModal('disclaimerModal')"
           class="interactive absolute right-6 top-6 text-white/60 hover:text-white"
         >
           <iconify-icon icon="solar:close-circle-linear" width="28" height="28"></iconify-icon>
@@ -1654,6 +1717,20 @@
             }
           }
         };
+
+        // Back to Top button visibility
+        const btt = document.getElementById('backToTop');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+              btt.classList.remove('opacity-0', 'pointer-events-none');
+              btt.classList.add('opacity-100');
+            } else {
+              btt.classList.add('opacity-0', 'pointer-events-none');
+              btt.classList.remove('opacity-100');
+            }
+          }, { passive: true });
+        }
 
         // 2. Navigation Scroll Effect & Parallax
         const nav = document.getElementById('nav');
